@@ -1,7 +1,7 @@
 const path = require("path");
-const DynamicCdnWebpackPlugin = require("dynamic-cdn-webpack-plugin");
+// const DynamicCdnWebpackPlugin = require("dynamic-cdn-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
+const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 
 module.exports = {
     mode: "development",
@@ -16,9 +16,9 @@ module.exports = {
             template: path.resolve(__dirname, "index.html"),
             inlineSource: '.js$'
         }),
-        // new HtmlWebpackInlineSourcePlugin(),
-        new DynamicCdnWebpackPlugin({
-            env: "production"
-        })
+        new HtmlWebpackInlineSourcePlugin(),
+        // new DynamicCdnWebpackPlugin({
+        //     env: "production"
+        // })
     ]
 }

@@ -1,5 +1,5 @@
 const path = require("path");
-// const DynamicCdnWebpackPlugin = require("dynamic-cdn-webpack-plugin");
+const DynamicCdnWebpackPlugin = require("dynamic-cdn-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 
@@ -17,8 +17,8 @@ module.exports = {
             inlineSource: '.js$'
         }),
         new HtmlWebpackInlineSourcePlugin(),
-        // new DynamicCdnWebpackPlugin({
-        //     env: "production"
-        // })
+        new DynamicCdnWebpackPlugin({
+            env: "production"
+        })
     ]
 }
